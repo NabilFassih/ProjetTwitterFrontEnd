@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  react:
+    stdin_open: true
+    container_name: reactFront
+    image: 'node:latest'
+    working_dir: /home/node/app
+    command:
+      - /bin/sh
+      - '-c'
+      - 'npm install && npm start'
+    ports:
+      - '3000:3000'
+    volumes:
+      - './:/home/node/app'
